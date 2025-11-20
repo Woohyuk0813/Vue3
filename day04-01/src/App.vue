@@ -15,11 +15,11 @@ const state = reactive({
   count: 0,
 });
 
-const countIncrement = () => {
-  count.value++;
+const countIncrement = (num1, num2, num3) => {
+  count.value = num1 + num2 + num3;
 };
-const stateCountIncrement = () => {
-  state.count++;
+const stateCountIncrement = (arr) => {
+  state.count = arr[0];
 };
 </script>
 <template>
@@ -35,7 +35,11 @@ const stateCountIncrement = () => {
 
   <DefineEmits
     @count-increment="countIncrement"
-    @state-count-increment="stateCountIncrement"
+    @state-count-increment="
+      (arr) => {
+        stateCountIncrement(arr);
+      }
+    "
   />
 </template>
 

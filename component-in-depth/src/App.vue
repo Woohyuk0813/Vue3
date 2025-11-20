@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import AppPropsLiteral from './components/props/AppPropsLiteral.vue';
+import AppPropsObject from './components/props/AppPropsObject.vue';
+
+const view = ref('');
+</script>
 
 <template>
   <div class="container">
@@ -23,6 +29,11 @@
         component Events (script setup)
       </button>
     </div>
+    <AppPropsLiteral v-if="view === 'literal'" view-title="좋아하는 과일은?" />
+    <AppPropsObject
+      v-if="view === 'object'"
+      view-title="좋아하는 과일은? (object data 전달)"
+    />
   </div>
 </template>
 
