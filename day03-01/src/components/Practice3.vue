@@ -5,7 +5,7 @@ const searchText = ref('');
 
 const warningMessage = computed(() => {
   if (searchText.value.length > 10) {
-    return '10자를 초과했습니다';
+    return '10자를 초과하였습니다';
   }
   return '';
 });
