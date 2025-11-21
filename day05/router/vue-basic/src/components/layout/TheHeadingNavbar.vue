@@ -14,6 +14,7 @@ import DropDownIconMenuSlot from '@/components/common/DropDownIconMenuSlot.vue';
         <img
           src="@/assets/mmcafe.png"
           class="rounded mx-auto d-block"
+          ₩
           id="logo"
           alt="..."
         />
