@@ -14,7 +14,7 @@ const router = createRouter({
     },
     {
       path: "/board",
-      name: "board",
+      name: "article-board",
       component: () => import("../views/AppBoardView.vue"),
       redirect: { name: "article-list" },
       children: [
@@ -27,8 +27,8 @@ const router = createRouter({
           },
         },
         {
-          path: "view/:articleno",
-          name: "article-view",
+          path: "detail/:no",
+          name: "article-detail",
           component: () => import("@/components/board/BoardDetail.vue"),
           props: true,
           meta: {
@@ -44,7 +44,7 @@ const router = createRouter({
           },
         },
         {
-          path: "modify/:articleno",
+          path: "modify/:no",
           name: "article-modify",
           component: () => import("@/components/board/BoardModify.vue"),
           props: true,
